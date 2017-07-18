@@ -13,6 +13,7 @@
 		8616A3181F1EA86B00DBC4C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8616A3171F1EA86B00DBC4C5 /* Assets.xcassets */; };
 		8616A31B1F1EA86B00DBC4C5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8616A3191F1EA86B00DBC4C5 /* LaunchScreen.storyboard */; };
 		8616A3231F1EACAC00DBC4C5 /* TimeZonePickerDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8616A3221F1EACAC00DBC4C5 /* TimeZonePickerDataSource.swift */; };
+		86612C841F1ECBC60014E5F7 /* CitiesAndTimeZones.json in Resources */ = {isa = PBXBuildFile; fileRef = 86612C831F1ECBC60014E5F7 /* CitiesAndTimeZones.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		8616A31A1F1EA86B00DBC4C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8616A31C1F1EA86B00DBC4C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8616A3221F1EACAC00DBC4C5 /* TimeZonePickerDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeZonePickerDataSource.swift; sourceTree = "<group>"; };
+		86612C831F1ECBC60014E5F7 /* CitiesAndTimeZones.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CitiesAndTimeZones.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			children = (
 				8616A3101F1EA86B00DBC4C5 /* AppDelegate.swift */,
 				8616A3171F1EA86B00DBC4C5 /* Assets.xcassets */,
+				86612C831F1ECBC60014E5F7 /* CitiesAndTimeZones.json */,
 				8616A31C1F1EA86B00DBC4C5 /* Info.plist */,
 				8616A3191F1EA86B00DBC4C5 /* LaunchScreen.storyboard */,
 				8616A3141F1EA86B00DBC4C5 /* Main.storyboard */,
@@ -127,6 +130,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8616A31B1F1EA86B00DBC4C5 /* LaunchScreen.storyboard in Resources */,
+				86612C841F1ECBC60014E5F7 /* CitiesAndTimeZones.json in Resources */,
 				8616A3181F1EA86B00DBC4C5 /* Assets.xcassets in Resources */,
 				8616A3161F1EA86B00DBC4C5 /* Main.storyboard in Resources */,
 			);
