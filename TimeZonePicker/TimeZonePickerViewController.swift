@@ -29,7 +29,7 @@ final class TimeZonePickerViewController: UIViewController {
     }
     
     private func update() {
-        dataSource.update {
+        dataSource.update { _ in
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
