@@ -38,6 +38,9 @@ public final class TimeZonePickerViewController: UIViewController {
     override public func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         update()
+        DispatchQueue.main.async {
+            self.searchBar.becomeFirstResponder()
+        }
     }
     
     private func update() {
