@@ -8,5 +8,5 @@ target :'TimeZonePickerExample' do
     project 'TimeZonePickerExample.xcodeproj'
     platform :ios, '8.0'
 
-    pod 'TimeZonePicker', :git => 'https://github.com/gligorkot/TimeZonePicker.git'
+    pod 'TimeZonePicker'
 end
