@@ -46,8 +46,8 @@
 		8616A3041F1EA86A00DBC4C5 = {
 			isa = PBXGroup;
 			children = (
-				8616A30F1F1EA86B00DBC4C5 /* TimeZonePicker */,
 				8616A30E1F1EA86B00DBC4C5 /* Products */,
+				8616A30F1F1EA86B00DBC4C5 /* TimeZonePicker */,
 			);
 			sourceTree = "<group>";
 		};
@@ -62,18 +62,36 @@
 		8616A30F1F1EA86B00DBC4C5 /* TimeZonePicker */ = {
 			isa = PBXGroup;
 			children = (
+				86612C891F1EF17C0014E5F7 /* Classes */,
+				86612C8A1F1EF19B0014E5F7 /* Resources */,
 				8616A3101F1EA86B00DBC4C5 /* AppDelegate.swift */,
 				8616A3171F1EA86B00DBC4C5 /* Assets.xcassets */,
-				86612C831F1ECBC60014E5F7 /* CitiesAndTimeZones.json */,
 				8616A31C1F1EA86B00DBC4C5 /* Info.plist */,
 				8616A3191F1EA86B00DBC4C5 /* LaunchScreen.storyboard */,
-				8616A3141F1EA86B00DBC4C5 /* Main.storyboard */,
-				8616A3221F1EACAC00DBC4C5 /* TimeZonePickerDataSource.swift */,
-				8616A3121F1EA86B00DBC4C5 /* TimeZonePickerViewController.swift */,
-				86612C851F1EDF730014E5F7 /* TimeZonePickerDelegate.swift */,
-				86612C871F1EE1D80014E5F7 /* CityCountryTimeZone.swift */,
 			);
 			path = TimeZonePicker;
+			sourceTree = "<group>";
+		};
+		86612C891F1EF17C0014E5F7 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				86612C871F1EE1D80014E5F7 /* CityCountryTimeZone.swift */,
+				8616A3141F1EA86B00DBC4C5 /* Main.storyboard */,
+				8616A3221F1EACAC00DBC4C5 /* TimeZonePickerDataSource.swift */,
+				86612C851F1EDF730014E5F7 /* TimeZonePickerDelegate.swift */,
+				8616A3121F1EA86B00DBC4C5 /* TimeZonePickerViewController.swift */,
+			);
+			name = Classes;
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		86612C8A1F1EF19B0014E5F7 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				86612C831F1ECBC60014E5F7 /* CitiesAndTimeZones.json */,
+			);
+			name = Resources;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -166,6 +184,7 @@
 				8616A3151F1EA86B00DBC4C5 /* Base */,
 			);
 			name = Main.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 		8616A3191F1EA86B00DBC4C5 /* LaunchScreen.storyboard */ = {
@@ -174,6 +193,7 @@
 				8616A31A1F1EA86B00DBC4C5 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
