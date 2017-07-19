@@ -1,0 +1,16 @@
+PODS:
+  - TimeZonePicker (0.1.0)
+
+DEPENDENCIES:
+  - TimeZonePicker (from `../`)
+
+EXTERNAL SOURCES:
+  TimeZonePicker:
+    :path: ../
+
+SPEC CHECKSUMS:
+  TimeZonePicker: 53dfd4b22544de601e76a0c4c26595434a398c4e
+
+PODFILE CHECKSUM: d7f5869a2f102e1f8ad4ac4312c6dd13353b420b
+
+COCOAPODS: 1.2.1

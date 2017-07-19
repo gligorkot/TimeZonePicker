@@ -31,7 +31,7 @@ final class TimeZonePickerDataSource: NSObject {
     func update(onComplete: @escaping (_ successful: Bool) -> ()) {
         DispatchQueue.global(qos: .userInitiated).async {
             do {
-                if let file = Bundle.main.url(forResource: "CitiesAndTimeZones", withExtension: "json") {
+                if let file = Bundle(for: TimeZonePickerDataSource.self).url(forResource: "CitiesAndTimeZones", withExtension: "json") {
                     let data = try Data(contentsOf: file)
                     let json = try JSONSerialization.jsonObject(with: data, options: [])
                     if let rootArray = json as? [[String : String]] {

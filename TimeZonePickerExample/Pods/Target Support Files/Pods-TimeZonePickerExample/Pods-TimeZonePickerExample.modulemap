@@ -1,0 +1,6 @@
+framework module Pods_TimeZonePickerExample {
+  umbrella header "Pods-TimeZonePickerExample-umbrella.h"
+
+  export *
+  module * { export * }
+}
