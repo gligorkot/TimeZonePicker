@@ -59,6 +59,9 @@ public final class TimeZonePickerViewController: UIViewController {
         searchBar.delegate = self
     }
     
+    @IBAction func cancelTapped(_ sender: UIBarButtonItem) {
+        self.dismiss(animated: true, completion: nil)
+    }
 }
 
 extension TimeZonePickerViewController: UISearchBarDelegate {

@@ -41,7 +41,13 @@
                             <constraint firstItem="9R1-o7-E9M" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="y9U-rZ-kRl"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Time Zone" id="TKH-v4-VXQ"/>
+                    <navigationItem key="navigationItem" title="Time Zone" id="TKH-v4-VXQ">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="tdK-p7-vMr">
+                            <connections>
+                                <action selector="cancelTapped:" destination="BYZ-38-t0r" id="XEN-Fc-RK8"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="searchBar" destination="9R1-o7-E9M" id="jsE-rF-VJj"/>
                         <outlet property="tableView" destination="rFL-YA-pTF" id="ecW-vz-t8C"/>
