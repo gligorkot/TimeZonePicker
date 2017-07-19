@@ -8,14 +8,21 @@
 
 import UIKit
 
+protocol TimeZonePickerDataSourceDelegate: class {
+    func timeZonePickerDataSource(_ timeZonePickerDataSource: TimeZonePickerDataSource, didSelectTimeZone timeZone: NSTimeZone)
+}
+
 final class TimeZonePickerDataSource: NSObject {
     
     private let tableView: UITableView
-    private var timeZones: [String] = []
-    fileprivate var filteredTimeZones: [String] = []
+    private var timeZones: [CityCountryTimeZone] = []
+    fileprivate var filteredTimeZones: [CityCountryTimeZone] = []
     
-    init(tableView: UITableView) {
+    fileprivate var delegate: TimeZonePickerDataSourceDelegate
+    
+    init(tableView: UITableView, delegate: TimeZonePickerDataSourceDelegate) {
         self.tableView = tableView
+        self.delegate = delegate
         super.init()
         tableView.dataSource = self
         tableView.delegate = self
@@ -30,13 +37,7 @@ final class TimeZonePickerDataSource: NSObject {
                     if let rootArray = json as? [[String : String]] {
                         // json is an array of [String : String] dictionaries
                         for element in rootArray {
-                            let city: String = element["name"]!
-                            let country: String = element["country"]!
-                            if !country.isEmpty {
-                                self.timeZones.append("\(city), \(country)")
-                            } else {
-                                self.timeZones.append("\(city)")
-                            }
+                            self.timeZones.append(CityCountryTimeZone(city: element["name"]!, country: element["country"]!, timeZoneName: element["timeZoneName"]!))
                         }
                         self.timeZones.sort()
                         self.filter("")
@@ -57,7 +58,7 @@ final class TimeZonePickerDataSource: NSObject {
     }
     
     func filter(_ searchString: String) {
-        self.filteredTimeZones = timeZones.filter({ return $0.contains(searchString) })
+        filteredTimeZones = timeZones.filter({ return $0.contains(searchString) })
     }
     
 }
@@ -74,12 +75,20 @@ extension TimeZonePickerDataSource: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "cell") {
-            cell.textLabel?.text = filteredTimeZones[indexPath.item]
+            cell.textLabel?.text = filteredTimeZones[indexPath.item].string()
             return cell
         }
         let cell = UITableViewCell(style: .default, reuseIdentifier: "cell")
-        cell.textLabel?.text = filteredTimeZones[indexPath.item]
+        cell.textLabel?.text = filteredTimeZones[indexPath.item].string()
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let selectedItem = filteredTimeZones[indexPath.item]
+        if let selectedTimeZone = NSTimeZone(name: selectedItem.timeZoneName) {
+            delegate.timeZonePickerDataSource(self, didSelectTimeZone: selectedTimeZone)
+        }
     }
     
 }

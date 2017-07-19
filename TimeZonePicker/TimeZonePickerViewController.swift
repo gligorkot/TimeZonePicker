@@ -8,23 +8,25 @@
 
 import UIKit
 
-final class TimeZonePickerViewController: UIViewController {
+public final class TimeZonePickerViewController: UIViewController {
     
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     
     fileprivate lazy var dataSource: TimeZonePickerDataSource = {
-        let ds = TimeZonePickerDataSource(tableView: self.tableView)
+        let ds = TimeZonePickerDataSource(tableView: self.tableView, delegate: self)
         return ds
     }()
+    
+    weak var delegate: TimeZonePickerDelegate?
 
-    override func viewDidLoad() {
+    override public func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
         configureSearchBar()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+    override public func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         update()
     }
@@ -49,9 +51,17 @@ final class TimeZonePickerViewController: UIViewController {
 
 extension TimeZonePickerViewController: UISearchBarDelegate {
     
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+    public func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         dataSource.filter(searchText)
         tableView.reloadData()
+    }
+    
+}
+
+extension TimeZonePickerViewController: TimeZonePickerDataSourceDelegate {
+    
+    func timeZonePickerDataSource(_ timeZonePickerDataSource: TimeZonePickerDataSource, didSelectTimeZone timeZone: NSTimeZone) {
+        delegate?.timeZonePicker(self, didSelectTimeZone: timeZone)
     }
     
 }

@@ -14,6 +14,8 @@
 		8616A31B1F1EA86B00DBC4C5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8616A3191F1EA86B00DBC4C5 /* LaunchScreen.storyboard */; };
 		8616A3231F1EACAC00DBC4C5 /* TimeZonePickerDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8616A3221F1EACAC00DBC4C5 /* TimeZonePickerDataSource.swift */; };
 		86612C841F1ECBC60014E5F7 /* CitiesAndTimeZones.json in Resources */ = {isa = PBXBuildFile; fileRef = 86612C831F1ECBC60014E5F7 /* CitiesAndTimeZones.json */; };
+		86612C861F1EDF730014E5F7 /* TimeZonePickerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86612C851F1EDF730014E5F7 /* TimeZonePickerDelegate.swift */; };
+		86612C881F1EE1D80014E5F7 /* CityCountryTimeZone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86612C871F1EE1D80014E5F7 /* CityCountryTimeZone.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		8616A31C1F1EA86B00DBC4C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8616A3221F1EACAC00DBC4C5 /* TimeZonePickerDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeZonePickerDataSource.swift; sourceTree = "<group>"; };
 		86612C831F1ECBC60014E5F7 /* CitiesAndTimeZones.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CitiesAndTimeZones.json; sourceTree = "<group>"; };
+		86612C851F1EDF730014E5F7 /* TimeZonePickerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeZonePickerDelegate.swift; sourceTree = "<group>"; };
+		86612C871F1EE1D80014E5F7 /* CityCountryTimeZone.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityCountryTimeZone.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +70,8 @@
 				8616A3141F1EA86B00DBC4C5 /* Main.storyboard */,
 				8616A3221F1EACAC00DBC4C5 /* TimeZonePickerDataSource.swift */,
 				8616A3121F1EA86B00DBC4C5 /* TimeZonePickerViewController.swift */,
+				86612C851F1EDF730014E5F7 /* TimeZonePickerDelegate.swift */,
+				86612C871F1EE1D80014E5F7 /* CityCountryTimeZone.swift */,
 			);
 			path = TimeZonePicker;
 			sourceTree = "<group>";
@@ -146,6 +152,8 @@
 				8616A3131F1EA86B00DBC4C5 /* TimeZonePickerViewController.swift in Sources */,
 				8616A3111F1EA86B00DBC4C5 /* AppDelegate.swift in Sources */,
 				8616A3231F1EACAC00DBC4C5 /* TimeZonePickerDataSource.swift in Sources */,
+				86612C881F1EE1D80014E5F7 /* CityCountryTimeZone.swift in Sources */,
+				86612C861F1EDF730014E5F7 /* TimeZonePickerDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
