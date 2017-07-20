@@ -9,5 +9,5 @@
 import Foundation
 
 public protocol TimeZonePickerDelegate: class {
-    func timeZonePicker(_ timeZonePicker: TimeZonePickerViewController, didSelectTimeZone timeZone: NSTimeZone)
+    func timeZonePicker(_ timeZonePicker: TimeZonePickerViewController, didSelectTimeZone timeZone: TimeZone)
 }

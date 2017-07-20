@@ -9,7 +9,7 @@
 import UIKit
 
 protocol TimeZonePickerDataSourceDelegate: class {
-    func timeZonePickerDataSource(_ timeZonePickerDataSource: TimeZonePickerDataSource, didSelectTimeZone timeZone: NSTimeZone)
+    func timeZonePickerDataSource(_ timeZonePickerDataSource: TimeZonePickerDataSource, didSelectTimeZone timeZone: TimeZone)
 }
 
 final class TimeZonePickerDataSource: NSObject {
@@ -86,7 +86,7 @@ extension TimeZonePickerDataSource: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let selectedItem = filteredTimeZones[indexPath.item]
-        if let selectedTimeZone = NSTimeZone(name: selectedItem.timeZoneName) {
+        if let selectedTimeZone = TimeZone(identifier: selectedItem.timeZoneName) {
             delegate.timeZonePickerDataSource(self, didSelectTimeZone: selectedTimeZone)
         }
     }

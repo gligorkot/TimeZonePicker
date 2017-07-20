@@ -1,12 +1,12 @@
 Pod::Spec.new do |s|
 
   s.name                  = 'TimeZonePicker'
-  s.version               = '1.0.0'
+  s.version               = '1.0.1'
   s.summary               = 'A TimeZonePicker UIViewController similar to the iOS Settings app.'
   s.description           = <<-DESC
                             * A ready view controller that can be used in any iOS app.
                             * Search/filter functionality ready using a search bar.
-                            * Selection invokes a delegate with the selected NSTimeZone.
+                            * Selection invokes a delegate with the selected TimeZone.
                               DESC
   s.homepage              = 'https://github.com/gligorkot/TimeZonePicker'
   s.license               = { :type => 'Apache License, Version 2.0', :file => 'LICENSE' }

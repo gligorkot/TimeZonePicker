@@ -75,7 +75,7 @@ extension TimeZonePickerViewController: UISearchBarDelegate {
 
 extension TimeZonePickerViewController: TimeZonePickerDataSourceDelegate {
     
-    func timeZonePickerDataSource(_ timeZonePickerDataSource: TimeZonePickerDataSource, didSelectTimeZone timeZone: NSTimeZone) {
+    func timeZonePickerDataSource(_ timeZonePickerDataSource: TimeZonePickerDataSource, didSelectTimeZone timeZone: TimeZone) {
         delegate?.timeZonePicker(self, didSelectTimeZone: timeZone)
     }
     

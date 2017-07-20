@@ -23,9 +23,9 @@ class ViewController: UIViewController {
 
 extension ViewController: TimeZonePickerDelegate {
     
-    func timeZonePicker(_ timeZonePicker: TimeZonePickerViewController, didSelectTimeZone timeZone: NSTimeZone) {
-        timeZoneName.text = timeZone.name
-        timeZoneOffset.text = timeZone.abbreviation
+    func timeZonePicker(_ timeZonePicker: TimeZonePickerViewController, didSelectTimeZone timeZone: TimeZone) {
+        timeZoneName.text = timeZone.identifier
+        timeZoneOffset.text = timeZone.abbreviation()
         timeZonePicker.dismiss(animated: true, completion: nil)
     }
     

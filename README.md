@@ -43,15 +43,15 @@ present(timeZonePicker, animated: true, completion: nil)
 The `TimeZonePickerDelegate` currently has only one method that needs to be implemented:
 
 ```swift
-func timeZonePicker(_ timeZonePicker: TimeZonePickerViewController, didSelectTimeZone timeZone: NSTimeZone)
+func timeZonePicker(_ timeZonePicker: TimeZonePickerViewController, didSelectTimeZone timeZone: TimeZone)
 ```
 
-Once an item is selected from the table of cities/countries the above delegate method gets called, conveniently returning the `TimeZonePickerViewController` and the selected `NSTimeZone`. You can use the `timeZonePicker` to dismiss it here and the `timeZone` as you need it in your application. For example:
+Once an item is selected from the table of cities/countries the above delegate method gets called, conveniently returning the `TimeZonePickerViewController` and the selected `TimeZone`. You can use the `timeZonePicker` to dismiss it here and the `timeZone` as you need it in your application. For example:
 
 ```swift
-func timeZonePicker(_ timeZonePicker: TimeZonePickerViewController, didSelectTimeZone timeZone: NSTimeZone) {
-    timeZoneName.text = timeZone.name
-    timeZoneOffset.text = timeZone.abbreviation
+func timeZonePicker(_ timeZonePicker: TimeZonePickerViewController, didSelectTimeZone timeZone: TimeZone) {
+    timeZoneName.text = timeZone.identifier
+    timeZoneOffset.text = timeZone.abbreviation()
     timeZonePicker.dismiss(animated: true, completion: nil)
 }
 ```
