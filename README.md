@@ -16,7 +16,7 @@ A TimeZonePicker UIViewController similar to the iOS Settings app. Search and se
 
 ### CocoaPods
 
-To install Valet in your iOS project, install with [CocoaPods](http://cocoapods.org)
+To install it in your iOS project, install with [CocoaPods](http://cocoapods.org)
 
 ```ruby
 pod 'TimeZonePicker'
