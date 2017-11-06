@@ -16,13 +16,16 @@ final class TimeZonePickerDataSource: NSObject {
     
     private let tableView: UITableView
     private var timeZones: [CityCountryTimeZone] = []
-    fileprivate var filteredTimeZones: [CityCountryTimeZone] = []
     
-    fileprivate var delegate: TimeZonePickerDataSourceDelegate
+    private var searchText = ""
+    fileprivate var filteredTimeZones: [CityCountryTimeZone] {
+        return timeZones.filter({ return $0.contains(searchText) })
+    }
     
-    init(tableView: UITableView, delegate: TimeZonePickerDataSourceDelegate) {
+    weak var delegate: TimeZonePickerDataSourceDelegate?
+    
+    init(tableView: UITableView) {
         self.tableView = tableView
-        self.delegate = delegate
         super.init()
         tableView.dataSource = self
         tableView.delegate = self
@@ -58,7 +61,7 @@ final class TimeZonePickerDataSource: NSObject {
     }
     
     func filter(_ searchString: String) {
-        filteredTimeZones = timeZones.filter({ return $0.contains(searchString) })
+        searchText = searchString
     }
     
 }
@@ -87,7 +90,7 @@ extension TimeZonePickerDataSource: UITableViewDataSource, UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: true)
         let selectedItem = filteredTimeZones[indexPath.item]
         if let selectedTimeZone = TimeZone(identifier: selectedItem.timeZoneName) {
-            delegate.timeZonePickerDataSource(self, didSelectTimeZone: selectedTimeZone)
+            delegate?.timeZonePickerDataSource(self, didSelectTimeZone: selectedTimeZone)
         }
     }
     
