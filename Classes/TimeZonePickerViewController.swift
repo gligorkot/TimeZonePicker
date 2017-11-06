@@ -22,8 +22,9 @@ public final class TimeZonePickerViewController: UIViewController {
         return nc
     }
     
-    fileprivate lazy var dataSource: TimeZonePickerDataSource = {
-        let ds = TimeZonePickerDataSource(tableView: self.tableView, delegate: self)
+    private lazy var dataSource: TimeZonePickerDataSource = {
+        let ds = TimeZonePickerDataSource(tableView: self.tableView)
+        ds.delegate = self
         return ds
     }()
     
@@ -53,6 +54,7 @@ public final class TimeZonePickerViewController: UIViewController {
     
     private func configureTableView() {
         tableView.tableFooterView = UIView()
+        tableView.keyboardDismissMode = .onDrag
     }
     
     private func configureSearchBar() {
