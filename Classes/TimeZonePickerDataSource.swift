@@ -18,7 +18,7 @@ final class TimeZonePickerDataSource: NSObject {
     private var timeZones: [CityCountryTimeZone] = []
     
     private var searchText = ""
-    fileprivate var filteredTimeZones: [CityCountryTimeZone] {
+    private var filteredTimeZones: [CityCountryTimeZone] {
         return timeZones.filter({ return $0.contains(searchText) })
     }
     

@@ -22,7 +22,7 @@ public final class TimeZonePickerViewController: UIViewController {
         return nc
     }
     
-    fileprivate lazy var dataSource: TimeZonePickerDataSource = {
+    private lazy var dataSource: TimeZonePickerDataSource = {
         let ds = TimeZonePickerDataSource(tableView: self.tableView)
         ds.delegate = self
         return ds

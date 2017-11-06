@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name                  = 'TimeZonePicker'
-  s.version               = '1.1.0'
+  s.version               = '1.2.0'
   s.summary               = 'A TimeZonePicker UIViewController similar to the iOS Settings app.'
   s.description           = <<-DESC
                             * A ready view controller that can be used in any iOS app.
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 
   s.source_files          = 'Classes', 'Classes/*.{swift}'
   s.resources             = 'Resources/*.{json,storyboard}'
-  s.pod_target_xcconfig   = { 'SWIFT_VERSION' => '3' }
+  s.pod_target_xcconfig   = { 'SWIFT_VERSION' => '4' }
 
   s.frameworks            = 'UIKit'
   s.requires_arc          = true
