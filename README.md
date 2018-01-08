@@ -6,6 +6,8 @@
 [![License](https://img.shields.io/cocoapods/l/TimeZonePicker.svg)](http://cocoadocs.org/docsets/TimeZonePicker)
 [![Platform](https://img.shields.io/cocoapods/p/TimeZonePicker.svg)](http://cocoadocs.org/docsets/TimeZonePicker)
 
+<a href='https://ko-fi.com/gligor' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://az743702.vo.msecnd.net/cdn/kofi1.png?v=0' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
+
 A TimeZonePicker UIViewController similar to the iOS Settings app. Search and select from a range of cities and countries to find your most suitable time zone.
 
 ## Screenshots
