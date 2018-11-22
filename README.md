@@ -1,6 +1,6 @@
 # TimeZonePicker
 
-[![Build Status](https://app.bitrise.io/app/bbd86dacf2e5a073/status.svg?token=ylYNbrvtOuMUOYJlYdKzfQ)](https://app.bitrise.io/app/bbd86dacf2e5a073)
+[![Build Status](https://app.bitrise.io/app/a8aacfeca49db0dd/status.svg?token=SyGPKzROHbYxep4c9-9czA)](https://app.bitrise.io/app/a8aacfeca49db0dd)
 [![codebeat badge](https://codebeat.co/badges/dac53a60-fe1f-4b5f-9098-99b17d720977)](https://codebeat.co/projects/github-com-gligorkot-timezonepicker-master)
 [![Version](https://img.shields.io/cocoapods/v/TimeZonePicker.svg)](http://cocoadocs.org/docsets/TimeZonePicker)
 [![License](https://img.shields.io/cocoapods/l/TimeZonePicker.svg)](http://cocoadocs.org/docsets/TimeZonePicker)
