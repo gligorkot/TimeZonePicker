@@ -19,7 +19,11 @@ final class TimeZonePickerDataSource: NSObject {
     
     private var searchText = ""
     private var filteredTimeZones: [CityCountryTimeZone] {
-        return timeZones.filter({ return $0.contains(searchText) })
+        if searchText.isEmpty {
+            return timeZones
+        } else {
+            return timeZones.filter({ return $0.contains(searchText) })
+        }
     }
     
     weak var delegate: TimeZonePickerDataSourceDelegate?
