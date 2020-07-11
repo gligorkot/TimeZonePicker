@@ -40,16 +40,17 @@ final class TimeZonePickerDataSource: NSObject {
             do {
                 if let file = Bundle(for: TimeZonePickerDataSource.self).url(forResource: "CitiesAndTimeZones", withExtension: "json") {
                     let data = try Data(contentsOf: file)
-                    let json = try JSONSerialization.jsonObject(with: data, options: [])
-                    if let rootArray = json as? [[String : String]] {
-                        // json is an array of [String : String] dictionaries
-                        for element in rootArray {
-                            self.timeZones.append(CityCountryTimeZone(city: element["name"]!, country: element["country"]!, timeZoneName: element["timeZoneName"]!))
+                    do {
+                        var timeZones = try JSONDecoder().decode([CityCountryTimeZone].self, from: data)
+                        timeZones.sort()
+                        
+                        DispatchQueue.main.async {
+                            self.timeZones = timeZones
+                            self.filter("")
+                            onComplete(true)
                         }
-                        self.timeZones.sort()
-                        self.filter("")
-                        onComplete(true)
-                    } else {
+                    } catch {
+                        
                         // should never get here / invalid json
                         onComplete(false)
                     }
