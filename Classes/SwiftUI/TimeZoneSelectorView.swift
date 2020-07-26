@@ -9,21 +9,14 @@
 import SwiftUI
 
 struct TimeZoneSelectorView: View {
-    @State var searchContent = "" {
-        didSet {
-            print("WILL SET SEARCH CONTENT")
-            updateResults()
-        }
-    }
-    
+    @State var searchContent = ""
+    @Binding var selectedTimeZone: CityCountryTimeZone?
     @Environment(\.presentationMode) var presentationMode
     var body: some View {
         VStack {
-            TextField("Search", text: $searchContent)
-            List {
-                Text("New York, USA")
-                Text("London, UK(?)")
-                Text("Tokyo, Japan")
+            TextField("Search", text: self.$searchContent)
+            List(self.getFilteredList(), selection: self.$selectedTimeZone) { item in
+                Text(item.string()).tag(item)
             }
             HStack {
                 Button(action: cancel) { Text("Cancel") }
@@ -33,8 +26,8 @@ struct TimeZoneSelectorView: View {
         .frame(minWidth: 200, minHeight: 200)
     }
     
-    func updateResults() {
-        print("new content=\(searchContent)")
+    func getFilteredList() -> [CityCountryTimeZone] {
+        return TimeZoneDataManager.sharedInstance.filter(self.searchContent)
     }
     
     func cancel() {
@@ -46,8 +39,16 @@ struct TimeZoneSelectorView: View {
     }
 }
 
-struct TimeZoneSelectorView_Previews: PreviewProvider {
-    static var previews: some View {
-        TimeZoneSelectorView()
-    }
-}
+//struct TimeZoneListItem: View {
+//    @State var timeZoneItem: CityCountryTimeZone
+//    @State var selectedString: String
+//    var body: some View {
+//        Text(timeZoneItem.string())
+//    }
+//}
+
+//struct TimeZoneSelectorView_Previews: PreviewProvider {
+//    static var previews: some View {
+////        TimeZoneSelectorView()
+//    }
+//}

@@ -9,16 +9,16 @@
 import SwiftUI
 
 struct TimeZonePreviewSelectionView: View {
-    @State var b = ""
+    @State var cityItem: CityCountryTimeZone?
     @State var selectorEnabled = false
     var body: some View {
         HStack {
-            Text("New York, USA")
+            Text(cityItem != nil ? "\(cityItem!.city), \(cityItem!.country)" : "None")
             Button(action: {self.selectorEnabled = true}) {
                 Text("Select...")
             }
         }.sheet(isPresented: $selectorEnabled) {
-            TimeZoneSelectorView()
+            TimeZoneSelectorView(selectedTimeZone: self.$cityItem)
         }
         
     }
