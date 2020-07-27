@@ -15,8 +15,9 @@ struct TimeZoneSelectorView: View {
     var body: some View {
         VStack {
             TextField("Search", text: self.$searchContent)
-            List(self.getFilteredList(), selection: self.$selectedTimeZone) { item in
+            List(self.getFilteredList(), id: \.self, selection: self.$selectedTimeZone) { item in
                 Text(item.string()).tag(item)
+                
             }
             HStack {
                 Button(action: cancel) { Text("Cancel") }

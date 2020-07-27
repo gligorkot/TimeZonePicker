@@ -9,23 +9,26 @@
 import SwiftUI
 
 struct TimeZonePreviewSelectionView: View {
-    @State var cityItem: CityCountryTimeZone?
+    @Binding var cityItem: CityCountryTimeZone?
     @State var selectorEnabled = false
     var body: some View {
         HStack {
-            Text(cityItem != nil ? "\(cityItem!.city), \(cityItem!.country)" : "None")
+            Text(cityItem != nil ? cityItem!.string() : "None")
+            Spacer()
             Button(action: {self.selectorEnabled = true}) {
                 Text("Select...")
             }
         }.sheet(isPresented: $selectorEnabled) {
-            TimeZoneSelectorView(selectedTimeZone: self.$cityItem)
+            TimeZoneSelectorView(searchContent: (self.cityItem != nil ? self.cityItem!.string() : ""), selectedTimeZone: self.$cityItem)
         }
         
     }
 }
 
 struct TimeZonePreviewSelectionView_Previews: PreviewProvider {
+//    @Binding var b = CityCountryTimeZone()
     static var previews: some View {
-        TimeZonePreviewSelectionView()
+        Text("bad")
+//        TimeZonePreviewSelectionView(cityItem: self.$b)
     }
 }
