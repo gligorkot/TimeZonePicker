@@ -3,6 +3,7 @@
 //  TimeZonePicker
 //
 //  Created by Gligor Kotushevski on 19/07/17.
+//  Edited by Malcolm Anderson on 7/25/20.
 //  Copyright © 2017 Gligor Kotushevski. All rights reserved.
 //
 

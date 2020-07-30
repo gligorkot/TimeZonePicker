@@ -1,6 +1,6 @@
 //
 //  TimeZoneDataManager.swift
-//  Clock
+//  TimeZonePicker
 //
 //  Created by Malcolm Anderson on 7/25/20.
 //  Copyright © 2020 Malcolm Anderson. All rights reserved.

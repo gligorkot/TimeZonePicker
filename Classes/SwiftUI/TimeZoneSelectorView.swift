@@ -1,6 +1,6 @@
 //
 //  TimeZoneSelectorView.swift
-//  Clock
+//  TimeZonePicker
 //
 //  Created by Malcolm Anderson on 7/25/20.
 //  Copyright © 2020 Malcolm Anderson. All rights reserved.
@@ -39,17 +39,3 @@ struct TimeZoneSelectorView: View {
         self.presentationMode.wrappedValue.dismiss()
     }
 }
-
-//struct TimeZoneListItem: View {
-//    @State var timeZoneItem: CityCountryTimeZone
-//    @State var selectedString: String
-//    var body: some View {
-//        Text(timeZoneItem.string())
-//    }
-//}
-
-//struct TimeZoneSelectorView_Previews: PreviewProvider {
-//    static var previews: some View {
-////        TimeZoneSelectorView()
-//    }
-//}
