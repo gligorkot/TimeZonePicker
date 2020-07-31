@@ -7,6 +7,7 @@ Pod::Spec.new do |s|
                             * A ready view controller that can be used in any iOS app.
                             * Search/filter functionality ready using a search bar.
                             * Selection invokes a delegate with the selected TimeZone.
+                            * SwiftUI implementation
                               DESC
   s.homepage              = 'https://github.com/gligorkot/TimeZonePicker'
   s.license               = { :type => 'Apache License, Version 2.0', :file => 'LICENSE' }
@@ -16,7 +17,7 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '13.0'
   s.source                = { :git => 'https://github.com/gligorkot/TimeZonePicker.git', :tag => s.version.to_s }
 
-  s.source_files          = 'Classes', 'Classes/*.{swift}'
+  s.source_files          = 'Classes', 'Classes/*.{swift}', 'Classes/SwiftUI/*.{swift}'
   s.resources             = 'Resources/*.{json,storyboard}'
   s.pod_target_xcconfig   = { 'SWIFT_VERSION' => '5.2' }
 
