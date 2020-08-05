@@ -6,7 +6,7 @@ workspace 'TimeZonePickerExample'
 
 target :'TimeZonePickerExample' do
     project 'TimeZonePickerExample.xcodeproj'
-    platform :ios, '8.0'
+    platform :ios, '13.0'
 
     pod 'TimeZonePicker', :path => '../'
 end

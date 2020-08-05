@@ -3,16 +3,24 @@
 //  TimeZonePicker
 //
 //  Created by Gligor Kotushevski on 19/07/17.
+//  Edited by Malcolm Anderson on 7/25/20.
 //  Copyright © 2017 Gligor Kotushevski. All rights reserved.
 //
 
 import Foundation
 
-struct CityCountryTimeZone: Codable {
+struct CityCountryTimeZone: Codable, Hashable, Identifiable {
+    var city = ""
+    var country = ""
+    var timeZoneName = ""
     
-    let city: String
-    let country: String
-    let timeZoneName: String
+    public var id: String { return city + country }
+    
+    init() {
+        self.city = "NULL"
+        self.country = "NULL"
+        self.timeZoneName = "NULL"
+    }
     
     init(city: String, country: String, timeZoneName: String) {
         self.city = city
@@ -21,7 +29,7 @@ struct CityCountryTimeZone: Codable {
     }
     
     func contains(_ string: String) -> Bool {
-        return city.lowercased().contains(string.lowercased()) || country.lowercased().contains(string.lowercased())
+        return self.string().lowercased().contains(string.lowercased())
     }
     
     func string() -> String {
